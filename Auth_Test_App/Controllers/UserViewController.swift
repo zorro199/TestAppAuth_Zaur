@@ -17,8 +17,17 @@ class UserViewController: UIViewController {
         return button
     }()
     
-    private var lable: UILabel = {
+    private var emailLable: UILabel = {
         let lable = UILabel()
+        lable.font = UIFont.systemFont(ofSize: 24)
+        lable.textColor = .brown
+        lable.textAlignment = .center
+        return lable
+    }()
+    
+    private var nameLable: UILabel = {
+        let lable = UILabel()
+        lable.font = UIFont.systemFont(ofSize: 18)
         lable.textColor = .brown
         lable.textAlignment = .center
         return lable
@@ -33,13 +42,18 @@ class UserViewController: UIViewController {
     }
      
     //MARK: - Setting views
+    
+    let auth = [Auth]()
 
     func configure() {
         view.backgroundColor = .white
+        title = "Account"
         ApiManager.shared.getUSer { result in
             switch result {
             case .success(let model):
-                self.lable.text = model.result_message ?? "nil"
+                self.emailLable.text = model.data?.profile?.email ?? "nil email"
+                self.nameLable.text = model.data?.profile?.name ?? "nil name"
+                print("result_code: - ", model.result_code ?? "nil")
             case .failure(let error):
                 print("error user", error.localizedDescription)
             }
@@ -47,21 +61,29 @@ class UserViewController: UIViewController {
         
     }
     
+    
     @objc func buttonLogoutHandler(){
         self.navigationController?.popViewController(animated: true)
     }
     
     func setViews() {
-        view.addSubviews([logOutButton, lable])
+        view.addSubviews([logOutButton, emailLable, nameLable])
     }
     
     func setLayout() {
         logOutButton.snp.makeConstraints {
-            $0.centerX.centerY.equalToSuperview()
+            $0.top.equalToSuperview().offset(200)
+            $0.centerX.equalToSuperview()
             $0.width.height.equalTo(100)
         }
-        lable.snp.makeConstraints {
-            $0.top.equalTo(logOutButton.snp.bottom).offset(40)
+        emailLable.snp.makeConstraints {
+            $0.top.equalTo(logOutButton.snp.bottom).offset(50)
+            $0.leading.equalToSuperview().offset(10)
+            $0.trailing.equalToSuperview().offset(-10)
+            $0.height.equalTo(40)
+        }
+        nameLable.snp.makeConstraints {
+            $0.top.equalTo(emailLable.snp.bottom).offset(10)
             $0.leading.equalToSuperview().offset(10)
             $0.trailing.equalToSuperview().offset(-10)
             $0.height.equalTo(40)

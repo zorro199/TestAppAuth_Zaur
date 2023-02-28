@@ -18,6 +18,7 @@
 		C1C8F9B429ABFC12002519C6 /* UIView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C8F9B329ABFC12002519C6 /* UIView + Ext.swift */; };
 		C1C8F9B729AC0707002519C6 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C8F9B629AC0707002519C6 /* Model.swift */; };
 		C1C8F9B929AC09C0002519C6 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C8F9B829AC09C0002519C6 /* ApiManager.swift */; };
+		C1E3002B29AE310500F043CD /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E3002A29AE310500F043CD /* UserDefaultsService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		C1C8F9B329ABFC12002519C6 /* UIView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Ext.swift"; sourceTree = "<group>"; };
 		C1C8F9B629AC0707002519C6 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		C1C8F9B829AC09C0002519C6 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		C1E3002A29AE310500F043CD /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				C1C8F9B329ABFC12002519C6 /* UIView + Ext.swift */,
+				C1E3002A29AE310500F043CD /* UserDefaultsService.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 				C1C8F9B729AC0707002519C6 /* Model.swift in Sources */,
 				C1C8F99F29ABF567002519C6 /* LoginViewController.swift in Sources */,
 				C1C8F99B29ABF567002519C6 /* AppDelegate.swift in Sources */,
+				C1E3002B29AE310500F043CD /* UserDefaultsService.swift in Sources */,
 				C1C8F9B429ABFC12002519C6 /* UIView + Ext.swift in Sources */,
 				C1C8F9B929AC09C0002519C6 /* ApiManager.swift in Sources */,
 				C1C8F99D29ABF567002519C6 /* SceneDelegate.swift in Sources */,

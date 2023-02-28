@@ -27,6 +27,7 @@ struct Auth: Codable {
 
 struct Token: Codable {
     let access_token: String?
+    let refresh_token: String?
 }
 
 struct Captcha: Codable {
@@ -36,14 +37,17 @@ struct Captcha: Codable {
 
 
 struct UserProfile: Codable {
+    let result_code: String?
     let result_message: String?
-    //let data: Profile?
+    let data: Profile?
 }
 
-//struct Profile: Codable {
-//    let profile: ProfileData?
-//}
-//
-//struct ProfileData: Codable {
-//    let middle_name: String?
-//}
+struct Profile: Codable {
+    let profile: ProfileData?
+}
+
+struct ProfileData: Codable {
+    let email: String?
+    let middle_name: String?
+    let name: String?
+}

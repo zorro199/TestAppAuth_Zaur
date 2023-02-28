@@ -55,7 +55,8 @@ class LoginViewController: UIViewController {
     
     private var lable: UILabel = {
         let lable = UILabel()
-        lable.textColor = .brown
+        lable.textColor = .red
+        lable.numberOfLines = 0
         lable.textAlignment = .center
         return lable
     }()
@@ -94,6 +95,8 @@ class LoginViewController: UIViewController {
                 
                 if model.result_code == "FLSCS" {
                     self.navigationController?.pushViewController(UserViewController(), animated: true)
+                    UserDefaults.token = model.data?.access_token ?? "nil token"
+                    UserDefaults.refreshToken = model.data?.refresh_token ?? "refresh nil"
                 } else {
                     self.lable.text = model.result_message ?? "nil message"
                 }
@@ -141,13 +144,11 @@ class LoginViewController: UIViewController {
         }
         lable.snp.makeConstraints {
             $0.top.equalTo(signInButton.snp.bottom).offset(40)
-            $0.leading.equalToSuperview().offset(60)
-            $0.trailing.equalToSuperview().offset(-60)
-            $0.height.equalTo(40)
+            $0.leading.equalToSuperview().offset(5)
+            $0.trailing.equalToSuperview().offset(-50)
+            $0.height.equalTo(100)
         }
     }
 
 }
 
-
-// qwer12 password ИНТЕРЕС

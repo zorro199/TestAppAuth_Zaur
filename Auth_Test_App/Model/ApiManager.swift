@@ -69,7 +69,7 @@ class ApiManager {
     
     // MARK: - GET USER
     func getUSer(completion: @escaping (Result<UserProfile, Error>) -> Void) {
-        let token = auth.first?.data?.access_token ?? "nil getUser"
+        let token = UserDefaults.token
         guard let url = URL(string: userLogOut) else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
